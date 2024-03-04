@@ -21,7 +21,7 @@ import (
 //       read
 
 func Get_all_targets() []Target {
-	cmd := exec.Command("boundary", "targets", "list", "--recursive", "-addr="+os.Getenv("ADDRESS"))
+	cmd := exec.Command("boundary", "targets", "list", "--recursive", "-addr="+os.Getenv("BOUNDARY_ADDRESS"))
 
 	// Get a pipe to read from standard out
 	r, _ := cmd.StdoutPipe()

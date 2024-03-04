@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -35,7 +36,7 @@ type Credentials struct {
 
 func Connect_to_target(target Target) (Credentials, error) {
 	credentials := Credentials{}
-	cmd := exec.Command("boundary", "connect", "-target-id="+target.ID)
+	cmd := exec.Command("boundary", "connect", "-target-id="+target.ID, "-addr="+os.Getenv("BOUNDARY_ADDRESS"))
 	// Get a pipe to read from standard out
 	r, _ := cmd.StdoutPipe()
 

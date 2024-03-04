@@ -110,8 +110,6 @@ func Setup_dbeaver(credentials Credentials, dbname string) {
 
 	dataSources.ConnectionTypes["boundary-cli"] = connectionType
 
-	fmt.Println("DataSources: ", dataSources)
-
 	// convert the dataSources to json
 	jsonData, err := json.Marshal(dataSources)
 	if err != nil {

@@ -89,6 +89,7 @@ func main() {
 
 	// connect to the selected target
 	credentials, err := Connect_to_target(filteredTargets[selection-1])
+	fmt.Println(credentials)
 	if err != nil {
 		fmt.Println("Error connecting to target:", err)
 	}
