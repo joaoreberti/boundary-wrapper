@@ -7,15 +7,6 @@ import (
 	"github.com/joho/godotenv"
 )
 
-type Target struct {
-	ID string
-	// ScopeID           string
-	// Version           string
-	// Type              string
-	Name string
-	// AuthorizedActions []string
-}
-
 func main() {
 	err := godotenv.Load()
 	if err != nil {

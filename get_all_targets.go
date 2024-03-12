@@ -9,16 +9,25 @@ import (
 )
 
 // Output
-//--
+// --
 // ID:                    {id}
-//     Scope ID:            {id}
-//     Version:             3
-//     Type:                tcp
-//     Name:                {name}
-//     Authorized Actions:
-//       authorize-session
-//       no-op
-//       read
+//
+//	Scope ID:            {id}
+//	Version:             3
+//	Type:                tcp
+//	Name:                {name}
+//	Authorized Actions:
+//	  authorize-session
+//	  no-op
+//	  read
+type Target struct {
+	ID string
+	// ScopeID           string
+	// Version           string
+	// Type              string
+	Name string
+	// AuthorizedActions []string
+}
 
 func Get_all_targets() []Target {
 	cmd := exec.Command("boundary", "targets", "list", "--recursive", "-addr="+os.Getenv("BOUNDARY_ADDRESS"))
